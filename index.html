@@ -8,22 +8,21 @@
     <link rel="icon" href="./pic/PxL1.png" />
   </head>
   <body>
+    <nav class="navbar">
+      <a href="#about">About</a>
+      <a href="#projects">Project</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <div class="container">
       <header>
-        <nav class="navbar">
-          <a href="#about">About</a>
-          <a href="#projects">Project</a>
-          <a href="#contact">Contact</a>
-        </nav>
         <h1 class="head">WELCOME TO MY DOMAIN</h1>
         <p class="intro">
-          Developer, creator, and lifelong learner passionate about building
-          software and sharing technology.
+          <span id="typing"></span><span class="cursor">|</span>
         </p>
       </header>
       <main>
-        <section id="about" class="about">
-          <img src="./pic/profile.jpg" alt="Photo of Piseth Loka" />
+        <section id="about" class="about reveal">
+          <img src="./pic/profile.jpg" alt="Portrait of Piseth Lokaa" />
           <div class="about-text">
             <h2>About me</h2>
             <h3>Piseth Lokaa</h3>
@@ -38,10 +37,10 @@
             </p>
             <hr />
             <ul>
-              <li>Java Developer</li>
-              <li>Vs Code Extension Creator</li>
-              <li>Bedroom Producer</li>
-              <li>Tech Content Creator</li>
+              <li><strong>Java Developer</strong></li>
+              <li><strong>Vs Code Extension Creator</strong></li>
+              <li><strong>Bedroom Producer</strong></li>
+              <li><strong>Tech Content Creator</strong></li>
             </ul>
 
             <div class="quick-facts">
@@ -61,7 +60,7 @@
           Explore my work, creative projects, and the platforms where I share
           them.
         </p>
-        <section id="projects" class="projects">
+        <section id="projects" class="projects reveal">
           <div class="cards">
             <!-- Card 1 -->
             <div class="card">
@@ -147,16 +146,49 @@
                 </a>
               </div>
             </div>
+            <!-- Card 4 -->
+            <div class="card">
+              <div class="card-content">
+                <a
+                  href="https://github.com/Pisethloka"
+                  class="card-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="./pic/github.png" alt="GitHub logo" />
+                  <span class="card-title">GitHub Account</span>
+                </a>
+                <hr />
+                <p class="card-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Reiciendis, ea?
+                </p>
+                <a
+                  href="https://github.com/Pisethloka"
+                  class="card-button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Click Me →</a
+                >
+              </div>
+            </div>
+            <div class="project-preview">
+              <p>Want to explore my projects?</p>
+              <a href="projects.html" class="project-btn">
+                View Detailed Projects →
+              </a>
+            </div>
           </div>
         </section>
       </main>
     </div>
-    <section id="contact">
+    <section id="contact" class="reveal">
       <h2>Contact</h2>
       <p>Coming Soon...</p>
     </section>
     <footer>
       <p>@ 2026 PisethLokaa</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
