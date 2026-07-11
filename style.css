@@ -94,7 +94,7 @@ html {
 .navbar a {
   font-family: var(--general-fonts);
   font-size: 1.1rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 
   color: var(--text-light);
   text-decoration: none;
@@ -137,7 +137,7 @@ html {
 .about-text {
   color: var(--text-light);
   word-spacing: 2px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .about-text h2 {
