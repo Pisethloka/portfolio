@@ -24,23 +24,27 @@ window.addEventListener("scroll", () => {
   let current = "";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
+    const top = section.offsetTop - 120;
+    const bottom = top + section.offsetHeight;
 
-    if (
-      window.scrollY >= sectionTop &&
-      window.scrollY < sectionTop + sectionHeight
-    ) {
-      current = section.getAttribute("id");
+    if (window.scrollY >= top && window.scrollY < bottom) {
+      current = section.id;
     }
   });
 
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
+  // At the bottom of the page, always highlight Contact
+  if (
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 5
+  ) {
+    current = "contact";
+  }
 
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
+  navLinks.forEach((link) => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${current}`,
+    );
   });
 });
 
