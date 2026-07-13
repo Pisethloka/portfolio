@@ -393,7 +393,90 @@ html {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Footer */
+/* ======================== Contact ======================== */
+#contact {
+  max-width: 1000px;
+  margin: 80px;
+  padding: 20px;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--heading-color);
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.contact-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Contact Hover effect */
+.contact-card {
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.contact-card h3 {
+  color: var(--text-light);
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+/* Divider */
+.contact-card hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+
+  margin: 20px 0 30px;
+}
+
+/* Container for the information */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.label {
+  color: var(--heading-color);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.value {
+  color: var(--text-light);
+}
+
+.value a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.value a:hover {
+  color: var(--heading-color);
+}
+
+/* ======================== Footer ======================== */
 footer {
   background-color: #177150;
   text-align: center;
