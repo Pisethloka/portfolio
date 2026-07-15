@@ -1,3 +1,4 @@
+/* ===== Components =====*/
 :root {
   --card-bg: rgb(97, 135, 100);
   --text-light: #ffffff;
@@ -9,8 +10,7 @@
   --heading-fonts: "heading-fonts", sans-serif;
   --section-fonts: "section-fonts", sans-serif;
 }
-
-/* Imported Fonts */
+/*===== Font families =====*/
 @font-face {
   font-family: "heading-fonts";
   src: url("./fonts/Wild\ Jungle.ttf") format("truetype");
@@ -24,33 +24,32 @@
   font-weight: 400;
   font-size: large;
 }
-
-/* Fonts setup */
+/* Description Start from About me -> Phnom Penh */
 .about-text {
   font-family: var(--section-fonts);
 }
-/* Background Color */
+/* Whole pages + animations + effects */
 body {
   margin: 0;
   background: linear-gradient(-45deg, #224b3b, #2b5748, #355f52, #21443a);
-
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
 }
 
-/* Background animation */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
-/* === Floating Blurred Circles ===*/
+
 .background-effects {
   position: fixed;
   inset: 0;
@@ -68,9 +67,7 @@ body {
 .circle1 {
   width: 320px;
   height: 320px;
-
   background: #4e8b68;
-
   top: 10%;
   left: 8%;
 }
@@ -82,9 +79,7 @@ body {
 .circle2 {
   width: 420px;
   height: 420px;
-
   background: #688f70;
-
   top: 45%;
   right: 10%;
 }
@@ -96,9 +91,7 @@ body {
 .circle3 {
   width: 260px;
   height: 260px;
-
   background: #355f52;
-
   bottom: 5%;
   left: 40%;
 }
@@ -106,11 +99,23 @@ body {
 .circle3 {
   animation: float 16s ease-in-out infinite;
 }
-
+/* Container for the whole card */
 .container {
   padding: 40px 20px;
 }
-/*========================== Intro =========================== */
+/* Header/title texts */
+.head {
+  font-family: var(--section-fonts);
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  letter-spacing: 3px;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgb(27, 12, 12);
+}
+
+/* Intro with animation at the buttom to 'WELCOME TO MY WORLD' */
 .intro {
   text-align: center;
   color: var(--text-light);
@@ -129,52 +134,35 @@ body {
     opacity: 0;
   }
 }
-
-/*========================== Head =========================== */
-.head {
-  font-family: var(--section-fonts);
-  color: #ffffff;
-  font-size: clamp(2rem, 5vw, 3rem);
-  text-align: center;
-  letter-spacing: 3px;
-  color: var(--heading-color);
-
-  margin-bottom: 20px;
-  text-shadow: 0 2px 4px rgb(27, 12, 12);
-}
-
+/* Just make the whole page run smoother */
 html {
   scroll-behavior: smooth;
 }
-/*========================== Nav Bar =========================== */
+
+/* Navigation bars */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
-
   padding: 18px 0;
-
   background: rgba(30, 60, 50, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Navigation link + animation  */
 .navbar a {
   font-family: var(--section-fonts);
   font-size: 1.1rem;
   letter-spacing: 1.5px;
-
   color: var(--text-light);
   text-decoration: none;
-
   padding: 8px 18px;
   border-radius: 8px;
-
   transition: 0.3s;
 }
 
@@ -182,13 +170,12 @@ html {
   background: rgba(255, 255, 255, 0.08);
   color: var(--heading-color);
 }
-/* ==> Active Navigation == */
+
 .navbar a.active {
   background: rgba(255, 255, 255, 0.12);
   color: var(--heading-color);
 }
-
-/*========================== About Me =========================== */
+/* Navigation components */
 .about {
   display: flex;
   align-items: center;
@@ -196,7 +183,6 @@ html {
   max-width: 1000px;
   margin: 60px auto;
   padding: 30px;
-
   background: var(--box-container);
   border-radius: 12px;
   backdrop-filter: blur(8px);
@@ -231,8 +217,7 @@ html {
   margin-top: 20px;
   padding-left: 20px;
 }
-
-/*========================== Quick facts =========================== */
+/* Quick facts (lang + location) */
 .quick-facts {
   margin-top: 25px;
   display: grid;
@@ -248,7 +233,6 @@ html {
   letter-spacing: 1.5px;
   color: var(--text-light);
 }
-/* Just animation thing */
 
 @media (max-width: 768px) {
   .about {
@@ -260,8 +244,6 @@ html {
     text-align: left;
   }
 }
-
-/* ================== Card Title & Subtitle ================== */
 
 .section-title {
   text-align: center;
@@ -280,8 +262,6 @@ html {
   margin-bottom: 15px;
 }
 
-/* ======================== Logo/Card ======================== */
-
 .cards {
   display: flex;
   justify-content: center;
@@ -292,25 +272,23 @@ html {
   margin: 25px auto;
   background-color: var(--box-container);
   border-radius: 8px;
-
   max-width: 1100px;
   margin: 30px auto 15px;
   padding: 40px;
-
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.08),
     rgba(255, 255, 255, 0.03)
   );
   backdrop-filter: blur(8px);
-
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .card {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adjusted space between logo and text*/
+  gap: 10px;
   padding: 20px;
   background-color: var(--card-bg);
   border-radius: 8px;
@@ -324,7 +302,6 @@ html {
   box-sizing: border-box;
 }
 
-/* Subtle Animation When first opened*/
 .card {
   animation: fadeUp 0.6s ease;
 }
@@ -334,6 +311,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -379,7 +357,7 @@ html {
 .card img {
   height: 90px;
   width: 90px;
-  object-fit: contain; /* Ensures the logo isn't squished or stretched*/
+  object-fit: contain;
   border-radius: 50%;
   border: 1px solid var(--logo-border-color);
   transition: transform 0.3s ease;
@@ -394,6 +372,7 @@ html {
   font-weight: 525;
   font-size: 1.1rem;
 }
+
 .card-content {
   display: flex;
   flex-direction: column;
@@ -403,10 +382,12 @@ html {
   height: 100%;
   justify-content: space-between;
 }
+
 .card-content hr {
   width: 100%;
   border: 1px solid var(--text-light);
 }
+
 .card-description {
   text-align: left;
   max-width: 85%;
@@ -415,7 +396,6 @@ html {
   line-height: 1.4;
 }
 
-/* Card Button */
 .card-button {
   margin-top: auto;
   align-self: center;
@@ -435,12 +415,11 @@ html {
   transform: translateY(-2px);
 }
 
-/* ======================== Project Preview ======================== */
-
 .project-preview {
   text-align: center;
   margin: 2px auto;
 }
+
 .project-preview p {
   color: var(--text-light);
   opacity: 0.7;
@@ -450,14 +429,11 @@ html {
   display: inline-block;
   margin-top: 15px;
   padding: 14px 30px;
-
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-
   color: white;
   text-decoration: none;
-
   transition: 0.3s;
 }
 
@@ -466,7 +442,6 @@ html {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* ======================== Contact ======================== */
 #contact {
   max-width: 1000px;
   margin: 5px auto 10px;
@@ -485,7 +460,6 @@ html {
 .contact-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   padding: 40px;
@@ -496,7 +470,7 @@ html {
   width: 100%;
   box-sizing: border-box;
 }
-/* Contact Hover effect */
+
 .contact-card {
   transition: 0.3s ease;
 }
@@ -512,21 +486,17 @@ html {
   font-size: 1.8rem;
 }
 
-/* Divider */
 .contact-card hr {
   border: none;
   height: 1px;
   background: rgba(255, 255, 255, 0.15);
-
   margin: 20px 0 30px;
 }
 
-/* Container for the information */
 .info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -546,11 +516,11 @@ html {
   text-decoration: none;
   transition: 0.3s;
 }
+
 .value a:hover {
   color: var(--heading-color);
 }
 
-/* ======================== Footer ======================== */
 footer {
   background-color: #177150;
   text-align: center;
@@ -560,12 +530,10 @@ footer {
   padding: 10px 0px;
 }
 
-/* Some stuff */
 a:focus {
   outline: 2px solid white;
 }
 
-/* ==> Scroll Reveal Animation */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
