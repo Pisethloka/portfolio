@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Piseth Lokaa | Portfolio</title>
+    <meta name="description" content="Piseth Lokaa - Student Developer" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="./pic/PxL1.png" />
   </head>
@@ -22,7 +23,8 @@
       <header>
         <h1 class="head">WELCOME TO MY WORLD</h1>
         <p class="intro">
-          <span id="typing"></span><span class="cursor">|</span>
+          <span id="typing" aria-live="polite"></span
+          ><span class="cursor">|</span>
         </p>
       </header>
       <main>
@@ -67,12 +69,16 @@
                   class="card-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="./pic/PxL1.png" alt="My Visual Studio Logo" />
+                  ><img
+                    src="./pic/PxL1.png"
+                    alt="My Visual Studio Logo"
+                    loading="lazy"
+                  />
                   <span class="card-title">VS Code Extension</span></a
                 >
                 <hr />
                 <ul class="card-list">
-                  <li>10+ Downloads</li>
+                  <li>20+ Downloads</li>
                   <li>1 Extension</li>
                   <li>2 Years Coding</li>
                 </ul>
@@ -92,7 +98,11 @@
                   class="card-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="./pic/Khmer.png" alt="Tiktok Channel" />
+                  ><img
+                    src="./pic/Khmer.png"
+                    alt="Tiktok Channel"
+                    loading="lazy"
+                  />
                   <span class="card-title">Tech Content</span></a
                 >
                 <hr />
@@ -116,7 +126,11 @@
                   class="card-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="./pic/Pxl.png" alt="Music Channel PxL" />
+                  ><img
+                    src="./pic/Pxl.png"
+                    alt="Music Channel PxL"
+                    loading="lazy"
+                  />
                   <span class="card-title">Music Projects</span></a
                 >
                 <hr />
@@ -141,13 +155,17 @@
                   class="card-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="./pic/github.png" alt="GitHub logo" />
+                  ><img
+                    src="./pic/github.png"
+                    alt="GitHub logo"
+                    loading="lazy"
+                  />
                   <span class="card-title">GitHub Account</span></a
                 >
                 <hr />
                 <p class="card-description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Reiciendis, ea?
+                  Java apps, VS Code extensions, and experiements I'm building
+                  and sharing in the open.
                 </p>
                 <a
                   href="https://github.com/Pisethloka"
@@ -168,6 +186,21 @@
         </section>
       </main>
     </div>
+    <!-- Music -->
+    <section>
+      <div id="yt-hidden-player"></div>
+      <div class="mini-player" data-video-id="7F5oZfJCRZM">
+        <button class="player-play-btn" type="button" aria-label="Play track">
+          <span class="play-icon">▶</span>
+        </button>
+        <div class="player-progress-bar">
+          <div class="player-progress-fill"></div>
+        </div>
+        <span class="player-current-time">0:00</span>
+        <span class="player-duration">0:00</span>
+      </div>
+    </section>
+
     <section id="contact" class="reveal">
       <h2 class="contact-title">Get in touch</h2>
       <div class="contact-card">
@@ -198,6 +231,7 @@
     <footer>
       <p>@ 2026 PisethLokaa</p>
     </footer>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
   </body>
 </html>

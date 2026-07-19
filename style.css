@@ -16,6 +16,7 @@
   src: url("./fonts/Wild\ Jungle.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -23,6 +24,7 @@
   src: url("./fonts/BebasNeue-Regular.ttf") format("truetype");
   font-weight: 400;
   font-size: large;
+  font-display: swap;
 }
 /* Description Start from About me -> Phnom Penh */
 .about-text {
@@ -520,6 +522,17 @@ html {
 .value a:hover {
   color: var(--heading-color);
 }
+
+/* Youtube */
+#yt-hidden-player {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Footer */
 footer {
   background-color: #177150;
