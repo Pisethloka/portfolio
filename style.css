@@ -36,6 +36,15 @@ html {
   margin-top: 20px;
 }
 
+.my-social a {
+  transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.my-social a:hover,
+.my-social a:focus-visible {
+  transform: scale(1.25);
+}
+
 .my-social svg {
   width: 22px;
   height: 22px;
@@ -61,10 +70,23 @@ html {
   color: rgb(246, 246, 246);
   text-decoration: none;
   border-bottom: 1px solid rgb(255, 254, 254);
+  transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-origin: left center;
+}
+
+.main-nav a:hover,
+.main-nave a:focus-visible {
+  transform: scale(1.08);
 }
 
 .main-nav a:last-child {
   border-bottom: none;
+}
+
+.main-nav a.is-active {
+  color: rgb(3, 4, 94);
+  border-bottom-color: rgb(202, 240, 248);
+  font-weight: 600;
 }
 
 /* Page sections */
@@ -265,6 +287,7 @@ html {
 .portfolio-card img {
   width: 100%;
   height: 100%;
+  border-radius: 40px;
   object-fit: cover;
 }
 
@@ -272,12 +295,14 @@ html {
   position: absolute;
   inset: 0;
   display: flex;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   background: rgb(0 0 0 / 65%);
   opacity: 0;
+  border-radius: 40px;
   transition: opacity 200ms ease;
 }
 
@@ -499,4 +524,27 @@ html {
   background-color: rgb(0, 180, 216);
   box-shadow: inset 0 0 0 1px rgba(0, 119, 182, 0.12);
   color: #ffffff;
+}
+
+.portfolio-filters button {
+  border: 0;
+  padding: 0.35rem 0.15rem;
+  background: transparent;
+  color: black;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    color 200ms ease,
+    transform 200ms ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.5rem;
+}
+.portfolio-filters button:hover,
+.portfolio-filters button:focus-visible {
+  transform: scale(1.05);
+}
+
+.portfolio-filters button.is-active {
+  color: rgb(23, 123, 221);
+  border-bottom-color: rgb(23, 123, 221);
 }
