@@ -8,7 +8,7 @@ html {
 
 /* Sidebar layout */
 .left-side {
-  background-color: rgb(23, 125, 221);
+  background-color: rgb(0, 119, 182);
 }
 
 /* Profile area */
@@ -133,6 +133,7 @@ html {
   align-items: center;
   gap: 2.5rem;
   margin-top: 2rem;
+  margin-bottom: 20px;
 }
 
 .about-photo {
@@ -220,7 +221,7 @@ html {
   width: 14px;
   height: 14px;
   border: 2px solid black;
-  background-color: aqua;
+  background-color: rgb(0, 119, 182);
 }
 
 @media (max-width: 575.98px) {
@@ -230,7 +231,7 @@ html {
 }
 
 #portfolio {
-  background-color: bisque;
+  background-color: rgb(255, 255, 255);
 }
 
 .portfolio-filters {
@@ -296,7 +297,7 @@ html {
   }
 }
 #skills {
-  background-color: burlywood;
+  background-color: rgb(202, 240, 248);
 }
 
 #skills .ability-bar:last-child {
@@ -325,13 +326,13 @@ html {
   border-radius: 20px;
   height: 20px;
   overflow: hidden;
-  background-color: #dfe4e6;
+  background-color: #f3f4f4;
 }
 
 .ability-fill {
   width: var(--level);
   height: 100%;
-  background-color: blue;
+  background-color: rgb(0, 119, 182);
 }
 
 @media (max-width: 575.98px) {
@@ -340,7 +341,7 @@ html {
   }
 }
 #contact {
-  background-color: gray;
+  background-color: rgb(255, 253, 253);
 }
 
 .contact-content {
@@ -351,16 +352,19 @@ html {
 }
 
 .contact-sub-element {
-  display: flex;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
   align-items: center;
   gap: 1rem;
   margin-bottom: 20px;
 }
 
 .contact-sub-element > div:first-child {
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
-  flex: 0 0 44px;
+  box-sizing: border-box;
 }
 
 .contact-sub-element h6 {
@@ -390,14 +394,20 @@ html {
 
 .contact-content-left {
   padding: 50px 50px 0 50px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-style: outset;
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .contact-content-right {
   padding: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-style: outset;
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .contact-content-left {
@@ -408,15 +418,20 @@ html {
 
 .contact-sub-element {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  grid-template-columns: 52px minmax(0, 1fr);
   align-items: center;
+  gap: 1rem;
   margin-bottom: 50px;
 }
 
 .contact-sub-element > div:first-child {
-  grid-column: 1;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
+  border-radius: 50%;
+  background: rgba(0, 119, 182, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 119, 182, 0.12);
 }
 
 .contact-sub-element > div:last-child {
@@ -458,4 +473,30 @@ html {
   .contact-content {
     grid-template-columns: 1fr;
   }
+}
+
+.gmail-link {
+  color: rgb(0, 119, 182);
+  text-decoration: none;
+}
+
+.contact-sub-element > div:first-child svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: rgb(3, 4, 94);
+}
+
+.btn-custom {
+  background-color: rgb(0, 119, 182);
+  color: white;
+  box-shadow: inset 0 0 0 1px rgba(0, 119, 182, 0.12);
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+  background-color: rgb(0, 180, 216);
+  box-shadow: inset 0 0 0 1px rgba(0, 119, 182, 0.12);
+  color: #ffffff;
 }
