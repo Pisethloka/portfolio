@@ -84,3 +84,53 @@ filterButtons.forEach((button) => {
     });
   });
 });
+
+const contactForm = document.querySelector(".contact-form");
+const contactStatus = document.querySelector("#contact-form-status");
+
+if (
+  contactForm instanceof HTMLFormElement &&
+  contactStatus instanceof HTMLElement
+) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+
+  if (submitButton instanceof HTMLButtonElement) {
+    const originalButtonText = submitButton.textContent;
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      contactStatus.textContent = "Sending your message...";
+      contactStatus.classList.remove("text-success", "text-danger");
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`Formspree returned status ${response.status}`);
+        }
+
+        contactStatus.textContent =
+          "Thanks! Your message was sent successfully.";
+        contactStatus.classList.add("text-success");
+        contactForm.reset();
+      } catch (error) {
+        console.error("Contact form submission failed:", error);
+        contactStatus.textContent =
+          "Sorry, your message couldn't be sent. Please try again!";
+        contactStatus.classList.add("text-danger");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText || "Send Message";
+      }
+    });
+  }
+}

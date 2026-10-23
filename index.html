@@ -766,7 +766,11 @@
                 </div>
               </div>
               <div class="contact-content-right">
-                <form class="contact-form">
+                <form
+                  class="contact-form"
+                  action="https://formspree.io/f/xzednlgj"
+                  method="POST"
+                >
                   <div class="contact-form-row">
                     <!-- Name -->
                     <div class="form-field">
@@ -778,6 +782,7 @@
                         id="contact-name"
                         name="name"
                         type="text"
+                        required
                       />
                     </div>
                     <!-- Email -->
@@ -790,6 +795,7 @@
                         id="contact-email"
                         name="email"
                         type="email"
+                        required
                       />
                     </div>
                     <!-- Subject -->
@@ -812,6 +818,7 @@
                         class="form-control"
                         id="contact-message"
                         name="message"
+                        required
                       ></textarea>
                     </div>
                     <button
@@ -821,6 +828,13 @@
                       Send Message
                     </button>
                   </div>
+                  <p
+                    id="contact-form-status"
+                    class="mt-3 mb-0"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                  ></p>
                 </form>
               </div>
             </div>
