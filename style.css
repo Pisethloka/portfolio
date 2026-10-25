@@ -548,3 +548,35 @@ html {
   color: rgb(23, 123, 221);
   border-bottom-color: rgb(23, 123, 221);
 }
+
+.contact-toast {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1080;
+  width: min(22rem, calc(100vw - 2.5rem));
+  margin: 0 !important;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: rgb(0, 119, 182);
+  color: #212529;
+  box-shadow: 0 0.5rem 1.5rem rgb (0 0 0 / 20%);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.contact-toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.contact-toast.text-success,
+.contact-toast.text-danger {
+  color: #fff !important;
+}

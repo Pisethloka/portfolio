@@ -96,11 +96,27 @@ if (
 
   if (submitButton instanceof HTMLButtonElement) {
     const originalButtonText = submitButton.textContent;
+    let statusTimeout;
+    function showContactStatus(message, statusClass, dismissAfter) {
+      clearTimeout(statusTimeout);
+      contactStatus.textContent = message;
+      contactStatus.classList.remove("text-success", "text-danger");
+      contactStatus.classList.add("is-visible");
 
+      if (statusClass) {
+        contactStatus.classList.add(statusClass);
+      }
+
+      if (dismissAfter) {
+        statusTimeout = setTimeout(() => {
+          contactStatus.classList.remove("is-visible");
+        }, dismissAfter);
+      }
+    }
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      contactStatus.textContent = "Sending your message...";
+      showContactStatus("Sending your message...");
       contactStatus.classList.remove("text-success", "text-danger");
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
@@ -118,14 +134,20 @@ if (
           throw new Error(`Formspree returned status ${response.status}`);
         }
 
-        contactStatus.textContent =
-          "Thanks! Your message was sent successfully.";
+        showContactStatus(
+          "Thanks! Your message was sent successfully.",
+          "text-success",
+          8000,
+        );
         contactStatus.classList.add("text-success");
         contactForm.reset();
       } catch (error) {
         console.error("Contact form submission failed:", error);
-        contactStatus.textContent =
-          "Sorry, your message couldn't be sent. Please try again!";
+        showContactStatus(
+          "Sorry, your message couldn't be sent. Please try again!",
+          "text-danger",
+          1000,
+        );
         contactStatus.classList.add("text-danger");
       } finally {
         submitButton.disabled = false;
