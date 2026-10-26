@@ -101,11 +101,10 @@ if (
       clearTimeout(statusTimeout);
       contactStatus.textContent = message;
       contactStatus.classList.remove("text-success", "text-danger");
-      contactStatus.classList.add("is-visible");
-
       if (statusClass) {
         contactStatus.classList.add(statusClass);
       }
+      contactStatus.classList.add("is-visible");
 
       if (dismissAfter) {
         statusTimeout = setTimeout(() => {
@@ -113,11 +112,11 @@ if (
         }, dismissAfter);
       }
     }
+
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       showContactStatus("Sending your message...");
-      contactStatus.classList.remove("text-success", "text-danger");
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
 
@@ -139,7 +138,6 @@ if (
           "text-success",
           8000,
         );
-        contactStatus.classList.add("text-success");
         contactForm.reset();
       } catch (error) {
         console.error("Contact form submission failed:", error);
@@ -148,7 +146,6 @@ if (
           "text-danger",
           1000,
         );
-        contactStatus.classList.add("text-danger");
       } finally {
         submitButton.disabled = false;
         submitButton.textContent = originalButtonText || "Send Message";
