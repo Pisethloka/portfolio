@@ -4,7 +4,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Piseth Loka | Portfolio</title>
+    <meta
+      name="description"
+      content="Explore Piseth Loka's projects, skills, and experience in software development."
+    />
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -12,6 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="./pics/favicon.png" />
   </head>
 
   <body>
@@ -32,6 +37,7 @@
           <div class="my-social">
             <!-- Facebook -->
             <a
+              class="interactive"
               href="https://www.facebook.com/piseth.loka/"
               aria-label="Facebook"
               target="_blank"
@@ -55,6 +61,7 @@
               aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
+              class="interactive"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -74,6 +81,7 @@
               aria-label="Tiktok"
               target="_blank"
               rel="noopener noreferrer"
+              class="interactive"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -93,6 +101,7 @@
               aria-label="Youtube"
               target="_blank"
               rel="noopener noreferrer"
+              class="interactive"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -107,7 +116,7 @@
             ></a>
 
             <!-- Telegram -->
-            <a href="https://t.me/Pisethloka"
+            <a href="https://t.me/Pisethloka" class="interactive"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -442,7 +451,11 @@
               role="group"
               aria-label="Filter portfolio projects"
             >
-              <button class="is-active" data-filter="all" aria-pressed="true">
+              <button
+                class="is-active interactive"
+                data-filter="all"
+                aria-pressed="true"
+              >
                 ALL
               </button>
               <button type="button" data-filter="app" aria-pressed="false">
@@ -758,7 +771,9 @@
                     <h6>My Email</h6>
 
                     <p>
-                      <a href="mailto:pisethlokaa@gmail.com" class="gmail-link"
+                      <a
+                        href="mailto:pisethlokaa@gmail.com"
+                        class="gmail-link interactive"
                         >pisethlokaa@gmail.com</a
                       >
                     </p>
@@ -822,7 +837,7 @@
                       ></textarea>
                     </div>
                     <button
-                      class="btn btn-custom rounded-pill px-4 py-2"
+                      class="btn btn-custom rounded-pill px-4 py-2 interactive"
                       type="submit"
                     >
                       Send Message

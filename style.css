@@ -161,6 +161,7 @@ html {
 .about-photo {
   display: block;
   width: 90%;
+  border-radius: 20px;
   max-height: 90%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -357,12 +358,29 @@ html {
   background-color: #f3f4f4;
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.ability-track:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.ability-track:hover .ability-fill {
+  filter: brightness(1.15);
+  transform: scaleX(1.02);
 }
 
 .ability-fill {
   width: var(--level);
   height: 100%;
   background-color: rgb(0, 119, 182);
+  transition:
+    filter 200ms ease,
+    transform 200ms ease;
+  transform-origin: left center;
 }
 
 @media (max-width: 575.98px) {
@@ -399,10 +417,11 @@ html {
 
 .contact-sub-element {
   display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
+  grid-template-columns: 48px minmax(0, 1fr);
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 50px;
+  gap: 12px;
+  width: min(100%, 20rem);
+  margin: 0 auto 50px;
 }
 
 .contact-sub-element > div:first-child {
@@ -557,4 +576,19 @@ html {
 .contact-toast.text-success,
 .contact-toast.text-danger {
   color: #fff !important;
+}
+
+.interactive {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.interactive:hover,
+.interactive:focus-visible {
+  transform: translateY(-2px);
+}
+
+.interactive:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
 }

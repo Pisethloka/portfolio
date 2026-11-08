@@ -85,9 +85,11 @@ filterButtons.forEach((button) => {
   });
 });
 
+// Contact Form
 const contactForm = document.querySelector(".contact-form");
 const contactStatus = document.querySelector("#contact-form-status");
 
+// Check if it's valid a form element and element or not
 if (
   contactForm instanceof HTMLFormElement &&
   contactStatus instanceof HTMLElement
@@ -98,7 +100,7 @@ if (
     const originalButtonText = submitButton.textContent;
     let statusTimeout;
     function showContactStatus(message, statusClass, dismissAfter) {
-      clearTimeout(statusTimeout);
+      clearTimeout(statusTimeout); // Cancel the time out
       contactStatus.textContent = message;
       contactStatus.classList.remove("text-success", "text-danger");
       if (statusClass) {
@@ -112,7 +114,7 @@ if (
         }, dismissAfter);
       }
     }
-
+    // submit process
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
